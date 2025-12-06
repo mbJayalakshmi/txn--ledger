@@ -89,7 +89,7 @@ Installation
 
 Clone the repository:
 
-git clone <your-repo-link>
+git clone https://github.com/mbJayalakshmi/txn--ledger
 cd txn-ledger
 
 Create virtual environment and install dependencies:
@@ -110,7 +110,7 @@ Open Postman or browser:
 
 Swagger docs: http://127.0.0.1:8000/docs
 
-Postman / API Testing
+Postman or Bruno / API Testing
 
 A Postman collection is provided with all endpoints.
 
