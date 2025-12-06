@@ -1,0 +1,179 @@
+GET http://127.0.0.1:8000/
+
+{
+  "message": "Ledger API Running Successfully!"
+}
+__________________________________________________________________________________________
+POST http://127.0.0.1:8000/accounts
+
+JSON
+{
+  "name": "piya",
+  "currency": "INR",
+  "balance": 10000
+}
+
+{
+  "id": 8,
+  "name": "piya",
+  "currency": "INR",
+  "balance": 10000,
+  "created_at": "2025-12-06T05:30:40",
+  "updated_at": "2025-12-06T05:30:40"
+}
+__________________________________________________________________________________________
+GET http://127.0.0.1:8000/accounts
+
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "currency": "INR",
+    "balance": 162900,
+    "created_at": "2025-12-05T21:24:42",
+    "updated_at": "2025-12-06T05:12:44"
+  },
+  {
+    "id": 2,
+    "name": "Jayalakshmi",
+    "currency": "INR",
+    "balance": 8600,
+    "created_at": "2025-12-05T21:25:51",
+    "updated_at": "2025-12-06T04:57:24"
+  },
+  {
+    "id": 3,
+    "name": "Riya",
+    "currency": "INR",
+    "balance": 80100,
+    "created_at": "2025-12-06T04:41:23",
+    "updated_at": "2025-12-06T05:18:17"
+  },
+  {
+    "id": 4,
+    "name": "priya",
+    "currency": "INR",
+    "balance": 7500,
+    "created_at": "2025-12-06T05:00:07",
+    "updated_at": "2025-12-06T05:18:17"
+  },
+  {
+    "id": 5,
+    "name": "shree",
+    "currency": "INR",
+    "balance": 12000,
+    "created_at": "2025-12-06T05:08:51",
+
+    "updated_at": "2025-12-06T05:12:30"
+  },
+  {
+    "id": 6,
+    "name": "jaya",
+    "currency": "INR",
+    "balance": 100000,
+    "created_at": "2025-12-06T05:12:11",
+    "updated_at": "2025-12-06T05:18:30"
+  },
+  {
+    "id": 7,
+    "name": "jaz",
+    "currency": "INR",
+    "balance": 10000,
+    "created_at": "2025-12-06T05:17:35",
+    "updated_at": "2025-12-06T05:17:35"
+  },
+  {
+    "id": 8,
+    "name": "piya",
+    "currency": "INR",
+    "balance": 10000,
+    "created_at": "2025-12-06T05:30:40",
+    "updated_at": "2025-12-06T05:30:40"
+  }
+]
+__________________________________________________________________________________________
+GET http://127.0.0.1:8000/accounts/8
+
+{
+  "id": 8,
+  "name": "piya",
+  "currency": "INR",
+  "balance": 10000,
+  "created_at": "2025-12-06T05:30:40",
+  "updated_at": "2025-12-06T05:30:40"
+}
+__________________________________________________________________________________________
+GET http://127.0.0.1:8000/accounts/2/balance
+
+{
+  "account_id": 2,
+  "balance": 8600
+}
+
+__________________________________________________________________________________________
+POST http://127.0.0.1:8000/transactions(CREDIT)
+
+JSON
+{
+  "account_id": 3,
+  "type": "credit",
+  "amount": 80000
+}
+
+{
+  "id": 31,
+  "account_id": 3,
+  "type": "credit",
+  "amount": 80000,
+  "description": "",
+  "created_at": "2025-12-06T05:33:53.076968"
+}
+__________________________________________________________________________________________
+GET  http://127.0.0.1:8000/transactions/id/5
+
+{
+  "id": 5,
+  "account_id": 2,
+  "type": "debit",
+  "amount": 500,
+  "description": null,
+  "created_at": "2025-12-06T04:36:01.716474"
+}
+__________________________________________________________________________________________
+POST http://127.0.0.1:8000/transfers
+
+JSON
+
+{
+  "from_id": 3,
+  "to_id": 4,
+  "amount": 100
+}
+
+{
+  "message": "Transfer successful"
+}
+
+_________________________________________________________________________________
+POST http://127.0.0.1:8000/transactions(DEBIT)
+
+JSON
+
+{
+  "account_id": 6,
+  "type": "debit",
+  "amount": 90000
+}
+
+{
+  "id": 35,
+  "account_id": 6,
+  "type": "debit",
+  "amount": 90000,
+  "description": "",
+  "created_at": "2025-12-06T05:38:52.939249"
+}
+
+___________________________________________________________________________________
+
+
